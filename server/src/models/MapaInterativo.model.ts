@@ -1,9 +1,12 @@
-import { Document, Schema, model } from 'mongoose';
+// models/MapaInterativo.model.ts
+import { Document, Schema, model, Types } from 'mongoose';
+import { IUsuario } from './Usuario/Usuario.model';
+
 
 export interface IMapaInterativo extends Document {
   municipio: string;
   localizacao: string;
-  atualizadoPor: Types.ObjectId;
+  atualizadoPor: IUsuario | Types.ObjectId;
 }
 
 const MapaInterativoSchema = new Schema<IMapaInterativo>({

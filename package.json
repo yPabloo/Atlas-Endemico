@@ -1,52 +1,13 @@
 {
-  "name": "atlasendemic",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.18.126",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "leaflet": "^1.9.4",
-    "mongodb": "^6.15.0",
-    "mongoose": "^5.13.23",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "util": "^0.12.5",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/leaflet": "^1.9.16",
-    "@types/mongodb": "^4.0.6"
+    "scripts": {
+      "start": "npm-run-all --parallel start:client start:server",
+      "start:client": "cd client && npm start",
+      "start:server": "cd server && npm run dev",
+      "build": "npm run build:client && npm run build:server",
+      "build:client": "cd client && npm run build",
+      "build:server": "cd server && npm run build"
+    },
+    "devDependencies": {
+      "npm-run-all": "^4.1.5"
+    }
   }
-}

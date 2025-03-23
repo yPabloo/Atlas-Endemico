@@ -1,4 +1,5 @@
 import { Document, Schema, model } from 'mongoose';
+import { Types } from 'mongoose';
 
 export interface IHistoricoDados extends Document {
   data: Date;

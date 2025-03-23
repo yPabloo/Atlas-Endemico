@@ -1,5 +1,6 @@
 import { Document, Schema, model, Types } from 'mongoose';
 import { SistemaNotificacoesModel } from './SistemaNotificacoes.model';
+import { bairros } from '../config';
 
 export interface IRegistroDeCaso extends Document {
   data: Date;
@@ -10,7 +11,7 @@ export interface IRegistroDeCaso extends Document {
 
 const RegistroDeCasaSchema = new Schema<IRegistroDeCaso>({
   data: { type: Date, default: Date.now },
-  localizacao: { type: String, required: true },
+  localizacao: { type: String, required: true, enum: bairros },
   descricao: { type: String, required: true },
   profissional: { type: Schema.Types.ObjectId, ref: 'Usuario', required: true }
 });
@@ -24,3 +25,4 @@ RegistroDeCasaSchema.post('save', async function(doc) {
 });
 
 export const RegistroDeCasoModel = model<IRegistroDeCaso>('RegistroDeCaso', RegistroDeCasaSchema);
+

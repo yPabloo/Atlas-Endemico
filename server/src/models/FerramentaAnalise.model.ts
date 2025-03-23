@@ -1,5 +1,5 @@
 import { Document, Schema, model, Types } from 'mongoose';
-import { MapaInterativoModel } from './MapaInterativo.model';
+import { IMapaInterativo, MapaInterativoModel } from './MapaInterativo.model';
 
 export interface IFerramentaAnalise extends Document {
   municipio: string;
@@ -12,7 +12,7 @@ const FerramentaAnaliseSchema = new Schema<IFerramentaAnalise>({
   localizacao: { type: String, required: true }
 });
 
-// Método para consultar mapa
+
 FerramentaAnaliseSchema.methods.consultarMapa = async function() {
   return MapaInterativoModel.find({
     municipio: this.municipio,
