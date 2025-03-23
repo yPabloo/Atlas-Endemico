@@ -35,7 +35,7 @@ const Login: React.FC = () => {
               height: '100px',
             }}
           />
-          <Typography sx={{ fontSize: '40px' }}>Atlas Endémico</Typography>
+          <Typography sx={{ fontSize: '40px' }}>Atlas Endêmico</Typography>
         </Box>
         <Box sx={{ background: "#ffffff", width: "300px", height: "350px", borderRadius: "20px", borderTopLeftRadius: "100px", borderTopRightRadius: "0px" }} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
           <Typography sx={{ color: "#000000", fontSize: "32px" }} pb={2}>Login</Typography>
