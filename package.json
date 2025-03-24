@@ -24,10 +24,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm-run-all --parallel start:client start:server",
+      "start:client": "cd client && npm start",
+      "start:server": "cd server && npm run dev",
+      "build": "npm run build:client && npm run build:server",
+      "build:client": "cd client && npm run build",
+      "build:server": "cd server && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@types/leaflet": "^1.9.16"
+    "@types/leaflet": "^1.9.16",
+    "npm-run-all": "^4.1.5"
   }
 }
